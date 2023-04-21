@@ -141,7 +141,7 @@ namespace Octokit.Internal
                 var body = request.Body as string;
                 if (body != null)
                 {
-                    requestMessage.Content = new StringContent(body, Encoding.UTF8, request.ContentType);
+                    requestMessage.Content = new StringContent(body, Encoding.UTF8, request.ContentType ?? "text/plain");
                 }
 
                 var bodyStream = request.Body as Stream;
